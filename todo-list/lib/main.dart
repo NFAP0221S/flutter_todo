@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_application_1/ui/screens/home/HomeScreen.dart';
-import 'firebase_options.dart';
-import 'app/app.dart';
+import 'package:flutter_application_1/controller/main_controller.dart';
+import 'package:provider/provider.dart';
+// import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_application_1/ui/screens/home/home_screen.dart';
+// import 'firebase_options.dart';
+// import 'app/app.dart';
 
 // void main() async {
 //   // WidgetsFlutterBinding.ensureInitialized();
@@ -17,17 +19,14 @@ void main () {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    
-    return MaterialApp(
-      title: 'Todo-list with flutter',
-            theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(87, 105, 96, 1)),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (_) => MainController(),
+      child: const MaterialApp(
+        title: 'Todo List App',
+        home: HomeScreen(title: 'Todo',),
       ),
-      home: const HomeScreen(title: 'Todo'),
     );
   }
 }

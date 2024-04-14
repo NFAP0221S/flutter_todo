@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/ui/screens/done/DoneScreen.dart';
-import 'package:flutter_application_1/ui/screens/progress/ProgressScreen.dart';
-import 'package:flutter_application_1/ui/screens/todo/TodoScreen.dart';
+import 'package:flutter_application_1/ui/screens/done/done_screen.dart';
+import 'package:flutter_application_1/ui/screens/progress/progress_screen.dart';
+import 'package:flutter_application_1/ui/screens/todo/todo_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String title;
@@ -48,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               controller: _tabController,
               tabs: const [
                 Tab(text: '할 일'),
-                Tab(text: '끝낸 일'),
-                Tab(text: '진철 도'),
+                Tab(text: '완료된 일'),
+                Tab(text: '지난 일'),
               ],
             ),
           ),
