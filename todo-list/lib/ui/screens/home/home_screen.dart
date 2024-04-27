@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this); // 3개의 탭을 위한 탭 컨트롤러
+    _tabController = TabController(length: 3, vsync: this); 
   }
 
   @override
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
          bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(50.0), // 조정 가능한 높이
+          preferredSize: const Size.fromHeight(50.0),
           child: Container(
             decoration: const BoxDecoration(
               border: Border(
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               tabs: const [
                 Tab(text: '할 일'),
                 Tab(text: '완료된 일'),
-                Tab(text: '지난 일'),
+                Tab(text: '종료된 일'),
               ],
             ),
           ),

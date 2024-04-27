@@ -12,7 +12,7 @@ class ProgressScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("마친 일 목록"),
+        title: Text("종료된 일 목록"),
       ),
       body: ListView.builder(
         itemCount: mainController.progressList.length,
