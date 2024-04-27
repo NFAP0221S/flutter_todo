@@ -4,6 +4,8 @@ import 'package:flutter_application_1/controller/main_controller.dart';
 import 'package:provider/provider.dart';
 
 class DoneScreen extends StatelessWidget {
+  const DoneScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     var mainController = Provider.of<MainController>(context);
@@ -18,7 +20,7 @@ class DoneScreen extends StatelessWidget {
           return ListTile(
             title: Text(mainController.completed[index].content),
             trailing: IconButton(
-              icon: Icon(Icons.delete),
+              icon: const Icon(Icons.delete),
               onPressed: () => mainController.removeCompleted(index),
             ),
           );
@@ -31,15 +33,15 @@ class DoneScreen extends StatelessWidget {
             builder: (BuildContext context) {
               TextEditingController titleController = TextEditingController();
               return AlertDialog(
-                title: Text('할 일을 끝내셨나요?'),
+                title: const Text('할 일을 끝내셨나요?'),
                 content: TextField(
                   controller: titleController,
-                  decoration: InputDecoration(hintText: "제목을 입력하세요."),
+                  decoration: const InputDecoration(hintText: "제목을 입력하세요."),
                 ),
                 actions: <Widget>[
                   TextButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    child: Text('취소'),
+                    child: const Text('취소'),
                   ),
                   TextButton(
                     onPressed: () {
@@ -49,7 +51,7 @@ class DoneScreen extends StatelessWidget {
                         Navigator.of(context).pop(); // 비어있을 때도 닫기
                       }
                     },
-                    child: Text('확인'),
+                    child: const Text('확인'),
                   ),
                 ],
               );
@@ -60,8 +62,8 @@ class DoneScreen extends StatelessWidget {
             mainController.addProgress(title); // 진척도 목록에 추가
           }
         },
-        child: Icon(Icons.check),
         tooltip: '오늘의 완료된 일 제목 입력',
+        child: const Icon(Icons.check),
       ),
     );
   }

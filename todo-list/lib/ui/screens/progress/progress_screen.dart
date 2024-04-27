@@ -5,6 +5,8 @@ import 'package:intl/intl.dart'; // 날짜 포맷을 위한 패키지
 import 'package:provider/provider.dart';
 
 class ProgressScreen extends StatelessWidget {
+  const ProgressScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     var mainController = Provider.of<MainController>(context);
@@ -12,7 +14,7 @@ class ProgressScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("종료된 일 목록"),
+        title: const Text("종료된 일 목록"),
       ),
       body: ListView.builder(
         itemCount: mainController.progressList.length,
@@ -24,7 +26,7 @@ class ProgressScreen extends StatelessWidget {
             title: Text("${progress.title} - $formattedDate ($totalItems개의 할 일중 / $completedItems개 완료)"),
             children: <Widget>[
               ...progress.completedItems.map((item) => ListTile(
-                title: Text(item.content, style: TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough)),
+                title: Text(item.content, style: const TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough)),
               )).toList(),
               ...progress.ongoingItems.map((item) => ListTile(
                 title: Text(item.content),
